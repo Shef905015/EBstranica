@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elektro Burić | Ponude za tvrtke</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar with logo linking back to Home -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Resursi/Logo2.png" alt="Logo">
+                Elektro <span>Burić</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <div class="content-container">
+            <section class="form-section-integrated">
+                <h2>Poslovne ponude</h2>
+                <p class="subtitle">Predstavljate veliku tvrtku ili nudite poslovnu suradnju? Pošaljite nam svoju ponudu ili upit.</p>
+                
+                <form id="offers-form" action="https://formspree.io/f/your-form-id" method="POST">
+                    <div class="form-group">
+                        <label for="company">Naziv tvrtke</label>
+                        <input type="text" id="company" name="company" required placeholder="npr. Naziv d.o.o.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Ime kontakt osobe</label>
+                        <input type="text" id="name" name="name" required placeholder="npr. Marko Marković">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Poslovni email</label>
+                        <input type="email" id="email" name="email" required placeholder="marko@tvrtka.hr">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" placeholder="npr. 01 123 4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Detalji ponude / Suradnje</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Opišite detalje poslovne ponude ili projekta..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary full-width">Pošalji ponudu</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Elektro Burić, Obrt za elektroinstalacije. <br> Vlasnik: Franko Burić</p>
+        </div>
+    </footer>
+
+</body>
+</html>

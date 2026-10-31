@@ -1,0 +1,305 @@
+/* Reset & Variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #050508;          /* Deep rich black */
+  --accent-color: #00f0ff;      /* Vibrant Electric Cyan/Blue */
+  --text-main: #9ba1a6;         /* Crisp readable gray */
+  --text-bright: #ffffff;       /* Pure white highlights */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar - Absolute positioning so it scrolls away with the page */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 35px 22%; 
+  background: transparent;
+  z-index: 1000;
+}
+
+/* Slide-in animation for logo component */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.logo img {
+  height: 35px;
+  width: auto;
+}
+
+.logo a {
+  color: var(--text-bright);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px; 
+}
+
+.logo span {
+  color: var(--accent-color);
+}
+
+/* Main Layout Wrapper for Subpages */
+.page-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 160px 22% 80px 22%;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 750px;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  padding: 0 22%;             
+}
+
+.hero-content {
+  max-width: 750px;
+  animation: slideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  color: var(--text-bright);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--text-main);
+}
+
+/* Stacked Navigation Buttons (One below another) */
+.hero-nav-buttons-stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.hero-nav-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.subpage-nav {
+  margin-bottom: 35px;
+}
+
+.btn-nav {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-nav:hover,
+.btn-nav.active {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+}
+
+/* Primary Action Button (Submit) */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--accent-color);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+}
+
+/* Integrated Sections (No boxes/cards background) */
+.form-section-integrated, .about-section-integrated {
+  width: 100%;
+}
+
+.form-section-integrated h2, .about-section-integrated h2 {
+  font-size: 2.5rem;
+  color: var(--text-bright);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin-bottom: 35px;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-bright);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-bright);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.full-width {
+  width: 100%;
+  text-align: center;
+}
+
+/* About Text */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+.about-content strong {
+  color: var(--text-bright);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #6c757d;
+  font-size: 0.85rem;
+  background: var(--bg-color);
+}
+
+/* Stacked Container for Giant Text Buttons */
+.hero-nav-buttons-stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Giant Text Button Styling & Left-to-Right Color Fill Animation */
+.btn-giant {
+  display: inline-block;
+  font-size: 2.8rem;              /* Giant bold text size */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  line-height: 1.1;
+  cursor: pointer;
+  
+  /* Linear Gradient: Base gray on right, Cyan accent on left */
+  background: linear-gradient(to right, var(--accent-color) 50%, var(--text-main) 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;     /* Starts displaying the gray side */
+  
+  /* Clips the background to render inside the text characters */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Smooth sweep transition */
+  transition: background-position 0.3s ease-out;
+}
+
+/* On hover, slide the gradient to fill text with Cyan from left to right */
+.btn-giant:hover {
+  background-position: 0 0;
+  filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.4));
+}
